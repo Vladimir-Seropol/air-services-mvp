@@ -1,27 +1,32 @@
-import { useState } from 'react';
-import { services, type Service } from './data/services';
+import { services } from './data/services';
 import { ServiceList } from './components/ServiceList';
 import { Summary } from './components/Summary';
+import { useServices } from './hooks/useServices';
 
-function App() {
-  const [selectedServices, setSelectedServices] = useState<Service[]>([]);
-
-  const handleAddService = (service: Service) => {
-    setSelectedServices(prev => [...prev, service]);
-  };
+function App  ()  {
+  const {
+    selectedServices,
+    addService,
+    removeService,
+    checkout,
+  } = useServices();
 
   return (
     <main className="container">
-     <ServiceList
-  services={services}
-  selected={selectedServices}
-  onAdd={handleAddService}
-/>
 
-      <Summary selected={selectedServices} />
+      <ServiceList
+        services={services}
+        selected={selectedServices}
+        onAdd={addService}
+      />
+
+      <Summary
+        selected={selectedServices}
+        onRemove={removeService}
+        onCheckout={checkout}
+      />
     </main>
   );
 };
 
-
-export default App
+export default App;

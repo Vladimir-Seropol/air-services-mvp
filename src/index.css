@@ -47,6 +47,48 @@ button:disabled {
   margin-top: 12px;
 }
 
+.summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.summary-title{
+    margin-right: 8px;
+}
+
+.summary-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+
+.remove-btn {
+  background: transparent;
+  color: #d32f2f;
+  font-size: 16px;
+  padding: 0 6px;
+}
+
+.remove-btn:hover {
+  opacity: 0.7;
+}
+
+.order-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+
 @media (min-width: 768px) {
   .container {
     display: grid;
